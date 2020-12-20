@@ -6,4 +6,6 @@ public class Permissions {
 
     public static final String FEED_SELF = "easyheal.feed.self";
     public static final String FEED_OTHERS = "easyheal.feed.others";
+
+    public static final String BYPASS_COOLDOWN = "easyheal.cooldown.bypass";
 }
