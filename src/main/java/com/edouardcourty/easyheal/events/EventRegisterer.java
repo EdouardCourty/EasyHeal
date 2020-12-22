@@ -8,6 +8,7 @@ public class EventRegisterer {
     public static void init(JavaPlugin plugin) {
         Boolean isFeedCooldownActivated = ConfigurationRepository.getIsFeedCooldownActivated();
         Boolean isHealCooldownActivated = ConfigurationRepository.getIsHealCooldownActivated();
+        // Only listen to the event if needed.
         if (isFeedCooldownActivated || isHealCooldownActivated) {
             plugin.getServer().getPluginManager().registerEvents(new PlayerQuitEventListener(), plugin);
         }

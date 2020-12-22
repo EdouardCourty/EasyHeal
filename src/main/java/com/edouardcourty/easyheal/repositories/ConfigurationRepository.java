@@ -18,6 +18,22 @@ public class ConfigurationRepository {
         return config.getInt("version");
     }
 
+    public static boolean getIsPermissionNeededToHealOthers() {
+        return config.getBoolean("need_permission_to_heal_others");
+    }
+
+    public static boolean getIsPermissionNeededToHealSelf() {
+        return config.getBoolean("need_permission_to_heal_self");
+    }
+
+    public static boolean getIsPermissionNeededToFeedOthers() {
+        return config.getBoolean("need_permission_to_feed_others");
+    }
+
+    public static boolean getIsPermissionNeededToFeedSelf() {
+        return config.getBoolean("need_permission_to_feed_self");
+    }
+
     public static long getHealCooldownDuration() {
         return config.getLong("heal_cooldown_duration");
     }
