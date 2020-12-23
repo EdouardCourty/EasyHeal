@@ -46,7 +46,11 @@ public class HealPlayerHandler {
         boolean isHealingHimself = isSentByPlayer && player.getName().equals(sender.getName());
 
         // The sender does not has the right permissions for what he's trying to do.
-        if (isSentByPlayer && ((!playerCanSelfHeal && isHealingHimself) || (!playerCanHealOthers && !isHealingHimself))) {
+        if (
+                isSentByPlayer && // Server does not need permission to execute the command
+                ((!playerCanSelfHeal && isHealingHimself && needPermissionToHealSelf) ||
+                (!playerCanHealOthers && !isHealingHimself && needPermissionToHealOthers))
+        ) {
             throw new PlayerHasNoPermissionException();
         }
 
