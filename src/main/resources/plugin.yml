@@ -6,7 +6,5 @@ author: "Edouard Courty"
 commands:
   heal:
     description: Heals you or the selected player.
-    usage: Type /heal to heal yourself or /heal <player> to heal another player.
   feed:
     description: Feeds you or the selected player.
-    usage: Type /feed to feed yourself or /feed <player> to feed another player.
