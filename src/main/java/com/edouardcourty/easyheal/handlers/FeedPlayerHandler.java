@@ -50,7 +50,11 @@ public class FeedPlayerHandler {
         boolean isFeedingHimself = isSentByPlayer && player.getName().equals(sender.getName());
 
         // The sender does not has the right permissions for what he's trying to do.
-        if (isSentByPlayer && ((!playerCanSelfFeed && isFeedingHimself) || (!playerCanFeedOthers && !isFeedingHimself))) {
+        if (
+                isSentByPlayer && // Server does not need permission to execute the command
+                ((!playerCanSelfFeed && isFeedingHimself && needPermissionToFeedSelf) ||
+                (!playerCanFeedOthers && !isFeedingHimself && needPermissionToFeedOthers))
+        ) {
             throw new PlayerHasNoPermissionException();
         }
 
